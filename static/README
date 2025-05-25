@@ -1,0 +1,18 @@
+your_flask_app/
+│
+├── app.py
+├── static/
+│   ├── light_curves/            # Type 1 plots
+│   │   ├── 2018-01-01_to_2018-01-01_LC_dwell_0918600.png
+│   │   └── ...
+│   ├── integrated_counts/       # Type 2 plots (always show max 3)
+│   │   ├── integrated_count_ssm1.png
+│   │   ├── integrated_count_ssm2.png
+│   │   └── integrated_count_ssm3.png
+│   └── sources_fov/            # Type 3 plots (not shown in UI yet)
+│       ├── 2018-01-01_to_2018-01-01_FOV_dwell_0918600.png
+│       └── ...
+│
+└── templates/
+    └── index.html
+

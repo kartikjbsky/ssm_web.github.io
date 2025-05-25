@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+        <!-- Main Content Box -->
+    <div class="main-container">
+        <h1 class="text-center">SSM Design Details</h1>
+        <p>This is a space research platform dedicated to Scanning Sky Monitor.</p>
+        <hr>
+        <h2>Introduction</h2>
+        <ul>
+            <li>Coded Mask: Non-focussing, indirect imaging.</li>
+            <li>Detector Plane: histogram of detected photon strike positions. Position sensing wires: from charge ratio; regular updates.</li>
+            <li>Iteratively model the super-position of shadows of the coded pattern due to all sources.
+                 SSM's very wide field of view:</li>
+            <li>Edge SSMS (SSM1 and SSM2): 100° x 27°
+                Central SSM (SSM3): 100° x 22°.</li>
+            <li>Prerequisite: Precomputed Shadow Response Library for given
+                detector parameters, geometry, efficiency, etc.</li>
+            <img src="{{ url_for('static', filename='images/ssm_logo.png') }}" alt="ssm image">
+            <img src="{{ url_for('static', filename='images/coded_mask.png') }}" alt="ssm image">
+            <br> <!-- Adds one line of space -->
+            <li>Imaging is only the last and important stage of a detailed pipeline.
+                The pipeline is fully automated - 24/7, periodically polls ISSDC for data.
+                Turn around time~ 25 min..</li>
+            <br> <!-- Adds one line of space -->
+            <img src="{{ url_for('static', filename='images/coded_mask2.png') }}" 
+                alt="ssm image" 
+                style="max-width: 75%; height: auto;">  <!-- Scales to 50% of container -->
+            <br> <!-- Adds one line of space -->
+            <br> <!-- Adds one line of space -->
+        </ul>
+        <ul>
+        <h2>Rotation Mechanism</h2>
+            <li>Shown here are sky projections of FSOV.</li>
+            <li>Stare-and-step mode: 10 deg step, 10 min stare;</li>
+            <li>Since mid 2021, Stare-and-step stopped.</li>
+            <li>Now: Platform angle chosen based on current X-ray sky activity for every pointing and commanded for each SAM.</li> 
+            <li>No Coning in the rotation platform so far.</li>
+            <br> <!-- Adds one line of space -->
+            <img src="{{ url_for('static', filename='images/ssm_rotation_axis.png') }}" 
+                alt="ssm image" 
+                style="max-width: 75%; height: auto;">  <!-- Scales to 50% of container -->
+        </ul>
+        <ul>
+        <h2>Imaging</h2>  
+            <img src="{{ url_for('static', filename='images/ssm_imaging.png') }}" 
+                alt="ssm image" 
+                style="max-width: 75%; height: auto;">  <!-- Scales to 50% of container -->
+            <br>
+            <br>
+            <br>
+            <img src="{{ url_for('static', filename='images/ssm_axis.png') }}" 
+                alt="ssm image" 
+                style="max-width: 75%; height: auto;">  <!-- Scales to 50% of container -->
+            <img src="{{ url_for('static', filename='images/ssm_axis_graph.png') }}" 
+                alt="ssm image" 
+                style="max-width: 50%; height: auto;">  <!-- Scales to 50% of container -->
+            <br>
+            <li>X: Shorter Coding axis and Y across.</li>
+            <li>Sky: nominal:125 elements (X) & 55 elements (Y) - 6875 skybins unwrapped.</li>
+            <li>Eight anode wires: same number of bins as mask pattern - 504 detbins unwrapped.</li>
+        </ul>
+        <h2>Earth Field Of View</h2>  
+            <img src="{{ url_for('static', filename='images/ssm_earth_fov.png') }}" 
+                alt="ssm image" 
+                style="max-width: 100%; height: auto;">  <!-- Scales to 50% of container -->
+
+              
+    </div>
+
+{% endblock %}
+
+<!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Excel Viewer</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="d-flex justify-content-end mb-4">
+                    <button id="excelBtn" class="btn btn-success">View Excel Data</button>
+                </div>
+                
+                <!-- Your existing content here -->
+                <div class="main-content">
+                    <!-- Page content goes here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Excel Viewer Modal -->
+    <div class="modal fade" id="excelModal" tabindex="-1">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Excel Data Viewer</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="text-center" id="excelLoader">
+                        <div class="spinner-border text-primary"></div>
+                        <p>Loading Excel data...</p>
+                    </div>
+                    <div class="table-responsive" id="excelTableContainer" style="display:none;">
+                        <table class="table table-bordered" id="excelTable"></table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="{{ url_for('static', filename='excel_viewer.js') }}"></script>
+</body>
+</html>
